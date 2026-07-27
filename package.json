@@ -1,0 +1,58 @@
+{
+  "name": "@kamod-ch/brand",
+  "version": "0.1.0",
+  "description": "Shared Kamod product logos for docs sites and GitHub READMEs.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Klaus Zahiragic",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kamod-ch/kamod-brand.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./logo.css": "./styles/logo.css",
+    "./assets/*": "./assets/*"
+  },
+  "files": [
+    "dist",
+    "styles",
+    "assets",
+    "scripts",
+    "snippets"
+  ],
+  "sideEffects": [
+    "./styles/logo.css"
+  ],
+  "scripts": {
+    "build": "tsup && tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "generate-readme-logos": "node ./scripts/generate-readme-logos.mjs",
+    "sync-docs-assets": "node ./scripts/sync-docs-assets.mjs",
+    "clean": "rm -rf dist"
+  },
+  "bin": {
+    "kamod-brand-readme": "./scripts/generate-readme-logos.mjs",
+    "kamod-brand-sync-docs": "./scripts/sync-docs-assets.mjs"
+  },
+  "peerDependencies": {
+    "preact": ">=10"
+  },
+  "devDependencies": {
+    "preact": "^10.29.3",
+    "tsup": "^8.5.1",
+    "typescript": "~5.9.3"
+  },
+  "keywords": [
+    "kamod",
+    "brand",
+    "logo",
+    "preact"
+  ]
+}
