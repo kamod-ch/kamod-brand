@@ -35,8 +35,15 @@
     "typecheck": "tsc --noEmit",
     "generate-readme-logos": "node ./scripts/generate-readme-logos.mjs",
     "sync-docs-assets": "node ./scripts/sync-docs-assets.mjs",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "release:check": "pnpm build && pnpm typecheck",
+    "release:publish": "pnpm publish --access public --provenance --no-git-checks",
+    "release": "node ./scripts/release.mjs patch",
+    "release:minor": "node ./scripts/release.mjs minor",
+    "release:major": "node ./scripts/release.mjs major",
+    "release:dry": "node ./scripts/release.mjs patch --dry"
   },
+  "packageManager": "pnpm@10.12.4",
   "bin": {
     "kamod-brand-readme": "./scripts/generate-readme-logos.mjs",
     "kamod-brand-sync-docs": "./scripts/sync-docs-assets.mjs"
