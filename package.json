@@ -61,5 +61,8 @@
     "brand",
     "logo",
     "preact"
-  ]
+  ],
+  "dependencies": {
+    "@kamod-ch/brand": "^0.1.0"
+  }
 }
