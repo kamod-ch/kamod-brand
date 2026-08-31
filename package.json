@@ -7,7 +7,7 @@
   "author": "Klaus Zahiragic",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kamod-ch/kamod-brand.git"
+    "url": "https://github.com/kamod-ch/kamod-brand"
   },
   "publishConfig": {
     "access": "public"
