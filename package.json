@@ -43,7 +43,7 @@
     "release:major": "node ./scripts/release.mjs major",
     "release:dry": "node ./scripts/release.mjs patch --dry"
   },
-  "packageManager": "pnpm@10.12.4",
+  "packageManager": "pnpm@11.17.0",
   "bin": {
     "kamod-brand-readme": "./scripts/generate-readme-logos.mjs",
     "kamod-brand-sync-docs": "./scripts/sync-docs-assets.mjs"
