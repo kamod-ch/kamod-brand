@@ -44,6 +44,17 @@ Use the snippet from `snippets/readme-header.md` or `readmeLogoMarkdown()` from 
 
 - `KamodProductLogo` — mark + product suffix (header)
 - `KamodMarkLogo` — horizontal mark (footer)
+- `KamodIcon` — symbol only, no “Kamod” wordmark
 - `withBase` — prefix site-relative asset paths
 - `readmeLogoMarkdown` — README markdown helper
 - `@kamod-ch/brand/logo.css` — shared styles
+- `@kamod-ch/brand/assets/kamod-icon.svg` / `kamod-icon-dark.svg` — icon + favicon sources (synced as `favicon-light.svg` / `favicon-dark.svg`)
+- `docsFaviconHeadLinks(base)` — light/dark favicon `<link>` entries for PreactPress
+
+Favicon head tags for PreactPress docs:
+
+```ts
+import { docsFaviconHeadLinks } from "@kamod-ch/brand";
+
+head: [...docsFaviconHeadLinks(base)],
+```

@@ -25,7 +25,7 @@ async function main() {
   if (help) {
     console.log(`Usage: kamod-brand-sync-docs [--target public]
 
-Copies docs-site logo assets and logo.css into the target public directory.`);
+Copies docs-site logo assets, favicons, and logo.css into the target public directory.`);
     process.exit(0);
   }
 
@@ -35,6 +35,8 @@ Copies docs-site logo assets and logo.css into the target public directory.`);
     "logo-kamod-light.svg",
     "kamod-logo-horizontal.svg",
     "kamod-logo-horizontal-dark.svg",
+    "kamod-icon.svg",
+    "kamod-icon-dark.svg",
   ];
 
   for (const file of assets) {
@@ -42,6 +44,18 @@ Copies docs-site logo assets and logo.css into the target public directory.`);
     const to = path.join(targetDir, file);
     await copyFile(from, to);
     console.log(`Copied ${file} -> ${path.relative(process.cwd(), to)}`);
+  }
+
+  const faviconCopies = [
+    { from: "kamod-icon.svg", to: "favicon-light.svg" },
+    { from: "kamod-icon-dark.svg", to: "favicon-dark.svg" },
+    { from: "kamod-icon.svg", to: "favicon.svg" },
+  ];
+  for (const { from, to } of faviconCopies) {
+    const src = path.join(packageRoot, "assets", from);
+    const dest = path.join(targetDir, to);
+    await copyFile(src, dest);
+    console.log(`Copied ${from} -> ${path.relative(process.cwd(), dest)}`);
   }
 
   const stylesDir = path.join(targetDir, "styles");
