@@ -22,6 +22,7 @@
   },
   "files": [
     "dist",
+    "README.md",
     "styles",
     "assets",
     "scripts",
@@ -33,6 +34,7 @@
   "scripts": {
     "build": "tsup && tsc -p tsconfig.build.json",
     "typecheck": "tsc --noEmit",
+    "brand:readme": "node ./scripts/generate-readme-logos.mjs --product Brand --output .github/assets",
     "generate-readme-logos": "node ./scripts/generate-readme-logos.mjs",
     "sync-docs-assets": "node ./scripts/sync-docs-assets.mjs",
     "clean": "rm -rf dist",

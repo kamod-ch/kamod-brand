@@ -1,60 +1,37 @@
-# @kamod-ch/brand
+<p align="center">
+  <img src=".github/assets/logo-kamod-brand-dark.svg#gh-light-mode-only" alt="Kamod Brand" width="280" />
+  <img src=".github/assets/logo-kamod-brand-light.svg#gh-dark-mode-only" alt="Kamod Brand" width="280" />
+</p>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/@kamod-ch/brand"><img src="https://img.shields.io/npm/v/%40kamod-ch%2Fbrand" alt="npm version" /></a>
+  <a href="https://github.com/kamod-ch/kamod-brand/stargazers"><img src="https://img.shields.io/github/stars/kamod-ch/kamod-brand?style=social" alt="GitHub stars" /></a>
+  <a href="https://github.com/kamod-ch/kamod-brand/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT license" /></a>
+</p>
+
+<p align="center">
+  <strong><a href="https://www.npmjs.com/package/@kamod-ch/brand">npm</a></strong> ·
+  <strong><a href="https://github.com/kamod-ch/kamod-brand">GitHub</a></strong> ·
+  <strong><a href="https://github.com/kamod-ch/kamod-brand/issues">Issues</a></strong>
+</p>
+
+> If Kamod Brand saves you time, **[star the repo](https://github.com/kamod-ch/kamod-brand)** — it helps others discover the project.
+
+# Kamod Brand
 
 Shared Kamod product logos for PreactPress docs sites and GitHub READMEs.
 
-## Install
-
-```bash
-pnpm add @kamod-ch/brand
-```
-
-## Docs site (PreactPress)
-
 ```tsx
-import { KamodProductLogo } from "@kamod-ch/brand";
+import { KamodProductLogo } from '@kamod-ch/brand'
 
-export default ({ class: className, label, base = "/" }) => (
-  <KamodProductLogo class={className} base={base} label={label} suffix="Icons" />
-);
+export default function Logo({ base = '/' }: { base?: string }) {
+  return <KamodProductLogo base={base} label="Kamod State" suffix="State" />
+}
 ```
-
-Import styles in your site config or layout:
-
-```ts
-["link", { rel: "stylesheet", href: publicUrl("styles/logo.css") }],
-```
-
-Sync static assets before dev/build:
 
 ```bash
-pnpm exec kamod-brand-sync-docs --target packages/docs/public
+pnpm exec kamod-brand-sync-docs --target public
+pnpm exec kamod-brand-readme --product State --output .github/assets
 ```
 
-## GitHub README
-
-Generate product SVGs:
-
-```bash
-pnpm exec kamod-brand-readme --product Icons --output .github/assets
-```
-
-Use the snippet from `snippets/readme-header.md` or `readmeLogoMarkdown()` from the package.
-
-## Exports
-
-- `KamodProductLogo` — mark + product suffix (header)
-- `KamodMarkLogo` — horizontal mark (footer)
-- `KamodIcon` — symbol only, no “Kamod” wordmark
-- `withBase` — prefix site-relative asset paths
-- `readmeLogoMarkdown` — README markdown helper
-- `@kamod-ch/brand/logo.css` — shared styles
-- `@kamod-ch/brand/assets/kamod-icon.svg` / `kamod-icon-dark.svg` — icon + favicon sources (synced as `favicon-light.svg` / `favicon-dark.svg`)
-- `docsFaviconHeadLinks(base)` — light/dark favicon `<link>` entries for PreactPress
-
-Favicon head tags for PreactPress docs:
-
-```ts
-import { docsFaviconHeadLinks } from "@kamod-ch/brand";
-
-head: [...docsFaviconHeadLinks(base)],
-```
+Preact is a peer dependency for the logo components. CLI helpers ship with the package (`kamod-brand-sync-docs`, `kamod-brand-readme`).

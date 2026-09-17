@@ -48,7 +48,7 @@ Copies docs-site logo assets, favicons, and logo.css into the target public dire
 
   const faviconCopies = [
     { from: "kamod-icon.svg", to: "favicon-light.svg" },
-    { from: "kamod-icon-dark.svg", to: "favicon-dark.svg" },
+    { from: "kamod-icon-favicon-dark.svg", to: "favicon-dark.svg" },
     { from: "kamod-icon.svg", to: "favicon.svg" },
   ];
   for (const { from, to } of faviconCopies) {
