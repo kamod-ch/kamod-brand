@@ -34,4 +34,24 @@ pnpm exec kamod-brand-sync-docs --target public
 pnpm exec kamod-brand-readme --product State --output .github/assets
 ```
 
-Preact is a peer dependency for the logo components. CLI helpers ship with the package (`kamod-brand-sync-docs`, `kamod-brand-readme`).
+To make the favicon follow both the manual docs theme and the operating-system theme, add the head links to the PreactPress config and mount `FaviconSync` once in the theme layout:
+
+```tsx
+// .preactpress/config.ts
+import { docsFaviconHeadLinks } from '@kamod-ch/brand'
+
+export default {
+  head: docsFaviconHeadLinks('/'),
+}
+```
+
+```tsx
+// .preactpress/theme/Layout.tsx
+import { FaviconSync } from '@kamod-ch/brand'
+
+export default function Layout() {
+  return <><FaviconSync base="/" />{/* layout */}</>
+}
+```
+
+Preact is a peer dependency for the components. CLI helpers ship with the package (`kamod-brand-sync-docs`, `kamod-brand-readme`).
