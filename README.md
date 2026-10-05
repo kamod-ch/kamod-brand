@@ -1,6 +1,6 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/kamod-ch/kamod-brand/main/.github/assets/logo-kamod-brand-dark.svg#gh-light-mode-only" alt="Kamod Brand" width="280" />
-  <img src="https://raw.githubusercontent.com/kamod-ch/kamod-brand/main/.github/assets/logo-kamod-brand-light.svg#gh-dark-mode-only" alt="Kamod Brand" width="280" />
+  <img src=".github/assets/logo-kamod-brand-dark.svg#gh-light-mode-only" alt="Kamod Brand" width="280" />
+  <img src=".github/assets/logo-kamod-brand-light.svg#gh-dark-mode-only" alt="Kamod Brand" width="280" />
 </p>
 
 <p align="center">
@@ -20,8 +20,6 @@
 # Kamod Brand
 
 Shared Kamod product logos for PreactPress docs sites and GitHub READMEs.
-
-For npm-published package READMEs, use absolute logo URLs (`readmeLogoMarkdown({ variant: "npm", repo: "kamod-ch/your-repo", product: "…" })`) — relative `.github/assets` paths are not in the npm tarball, and npm ignores `#gh-light-mode-only` / `#gh-dark-mode-only`.
 
 ```tsx
 import { KamodProductLogo } from '@kamod-ch/brand'
