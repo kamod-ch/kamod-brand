@@ -51,12 +51,12 @@
     "kamod-brand-sync-docs": "./scripts/sync-docs-assets.mjs"
   },
   "peerDependencies": {
-    "preact": ">=10"
+    "preact": ">=11"
   },
   "devDependencies": {
-    "preact": "^10.29.3",
+    "preact": "^11.0.0",
     "tsup": "^8.5.1",
-    "typescript": "~5.9.3"
+    "typescript": "~7.0.2"
   },
   "keywords": [
     "kamod",
