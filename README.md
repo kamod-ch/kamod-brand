@@ -1,5 +1,6 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/kamod-ch/.github/main/assets/logo-kamod-brand.svg" alt="Kamod Brand" width="280" />
+  <img src=".github/assets/logo-kamod-brand-dark.svg#gh-light-mode-only" alt="Kamod Brand" width="280" />
+  <img src=".github/assets/logo-kamod-brand-light.svg#gh-dark-mode-only" alt="Kamod Brand" width="280" />
 </p>
 
 <p align="center">
