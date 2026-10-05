@@ -3,8 +3,12 @@ export interface ReadmeLogoOptions {
   productSlug?: string;
   label?: string;
   width?: number;
-  /** Relative paths for GitHub repo READMEs. */
-  variant?: "github" | "npm";
+  /**
+   * - `github`: relative `.github/assets` paths with GitHub theme fragments.
+   * - `github-absolute`: raw GitHub URLs + theme fragments (repo README also published to npm).
+   * - `npm`: one logo via raw GitHub URL (npm has no `#gh-*-mode-only` support).
+   */
+  variant?: "github" | "github-absolute" | "npm";
   repo?: string;
   branch?: string;
 }
@@ -25,13 +29,22 @@ export function readmeLogoMarkdown(options: ReadmeLogoOptions): string {
   const dark = logoBasename(productSlug, "dark");
   const light = logoBasename(productSlug, "light");
 
-  const src = (file: string) => {
-    if (variant === "npm" && options.repo) {
-      const branch = options.branch ?? "main";
-      return `https://raw.githubusercontent.com/${options.repo}/${branch}/.github/assets/${file}`;
+  const branch = options.branch ?? "main";
+  const assetPath = (file: string) => `.github/assets/${file}`;
+  const rawUrl = (file: string) => {
+    if (!options.repo) {
+      throw new Error("readmeLogoMarkdown: `repo` is required for github-absolute and npm variants");
     }
-    return `.github/assets/${file}`;
+    return `https://raw.githubusercontent.com/${options.repo}/${branch}/${assetPath(file)}`;
   };
+
+  if (variant === "npm") {
+    return `<p align="center">
+  <img src="${rawUrl(dark)}" alt="${label}" width="${width}" />
+</p>`;
+  }
+
+  const src = (file: string) => (variant === "github-absolute" ? rawUrl(file) : assetPath(file));
 
   return `<p align="center">
   <img src="${src(dark)}#gh-light-mode-only" alt="${label}" width="${width}" />
