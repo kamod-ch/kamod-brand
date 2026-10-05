@@ -1,6 +1,6 @@
 {
   "name": "@kamod-ch/brand",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Shared Kamod product logos for docs sites and GitHub READMEs.",
   "type": "module",
   "license": "MIT",
