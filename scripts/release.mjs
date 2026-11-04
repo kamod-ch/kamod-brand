@@ -187,6 +187,6 @@ run(`git push origin v${newVersion}`);
 
 console.log("\n[release] Release tag pushed successfully.");
 console.log(
-  "[release] GitHub Actions will publish to npm (see .github/workflows/publish.yml).",
+  "[release] GitHub Actions will publish to npm with provenance (see .github/workflows/publish.yml).",
 );
 console.log(`[release] npm: https://www.npmjs.com/package/${packageName}/v/${newVersion}`);
