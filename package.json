@@ -45,7 +45,7 @@
     "release:major": "node ./scripts/release.mjs major",
     "release:dry": "node ./scripts/release.mjs patch --dry"
   },
-  "packageManager": "pnpm@11.17.0",
+  "packageManager": "pnpm@12.21.0+sha512.66fd8278ee28935ce951792d34367ff3af5c432a2756445823029533835b8da529bbe0be5130afd56ed0713fb8789e47bad82d93bd5ae2fe54b15562d6276ef0",
   "bin": {
     "kamod-brand-readme": "./scripts/generate-readme-logos.mjs",
     "kamod-brand-sync-docs": "./scripts/sync-docs-assets.mjs"
@@ -54,8 +54,8 @@
     "preact": ">=11"
   },
   "devDependencies": {
-    "preact": "^11.0.0",
-    "tsup": "^8.5.1",
+    "preact": "^11.2.0",
+    "tsup": "^9.0.0",
     "typescript": "~7.0.2"
   },
   "keywords": [
